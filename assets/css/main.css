@@ -1,0 +1,1221 @@
+/*-----------------------------------------------------
+Table of Contents
+
+1. General Styles
+2. Navigation
+3. Footer
+4. Pages
+	# About Us
+	# Case Study
+	# Contact 
+	# Homepage
+		= About Us
+		= Contact Us
+		= Featured Works
+		= Hero
+		= Services
+	# Journal
+	# Projects
+	# Project Category
+	# Single Journal Entry
+
+------------------------------------------------------*/
+
+/*-----------------------------------------------------
+1. General Styles
+------------------------------------------------------*/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+body {
+	font-family: Muli, sans-serif;
+	font-size: 100%;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	text-decoration: none;
+	transition: all .2s ease-in-out;
+}
+
+.btn,
+.btn-inverse {
+	align-items: center;
+	display: flex;
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	font-weight: 600;
+	height: 60px;
+	letter-spacing: 2.5px;
+	justify-content: center;
+	text-transform: uppercase;
+	width: 250px;
+}
+
+.container {
+	max-width: 1410px;
+	margin: auto;
+}
+
+.container-large {
+	max-width: 1720px;
+	margin: auto;
+}
+
+.clearfix {
+	clear: both;
+}
+
+.img-cover  {
+	background: lightslategray;
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*-----------------------------------------------------
+2. Navigation
+------------------------------------------------------*/
+
+.header {
+	height: 100px;
+	line-height: 100px;
+	width: 100%;
+}
+
+.logo {
+	height: 26px;
+	margin-top: 36px;
+}
+
+.navigation {
+	float: right;
+}
+.navigation li {
+	float: left;
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	font-weight: 600;
+	letter-spacing: 2px;
+	list-style: none;
+	margin-left: 50px;
+	text-transform: uppercase;
+}
+
+.open-nav {
+	display: none;
+	float: right;
+	height: 22px;
+	margin: 38px 0;
+	position: relative;
+	width: 28px;
+}
+
+.open-nav:hover {
+	cursor: pointer;
+}
+
+.open-nav i {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	height: 2px;
+	width: 100%;
+	transition: all .3s ease-in-out;
+}
+
+.open-nav i:before {
+	position: absolute;
+	top: -9px;
+	content: " ";
+	height: 2px;
+	width: 100%;
+	transition: all .3s ease-in-out;
+}
+
+.open-nav i:after {
+	position: absolute;
+	top: 9px;
+	content: " ";
+	height: 2px;
+	width: 100%;
+	transition: all .3s ease-in-out;
+}
+
+.open-nav:hover i:before,
+.open-nav:hover i:after {
+	width: 80%;
+}
+
+.responsive-nav-container {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	bottom: 0;
+	right: 0;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0;
+	transition: opacity .4s, left 0s .4s;
+	z-index: 2;
+}
+
+.responsive-nav-container.active {
+	left: 0;
+	opacity: 1;
+	transition: opacity .4s, left 0s;
+}
+
+.close-nav {
+	font-size: 1.5rem;
+	position: absolute;
+	right: 70px;
+	top: 35px;
+}
+
+.responsive-nav {
+	left: 70px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.responsive-nav li {
+	font-family: 'DM Serif Display', serif;
+	font-size: 2.7rem;
+	letter-spacing: 1px;
+	list-style: none;
+	margin-bottom: 8px;
+	position: relative;
+	text-transform: capitalize;
+}
+
+.social-links {
+	bottom: 35px;
+	left: 70px;
+	position: absolute;
+}
+
+.social-links li {
+	float: left;
+	font-family: Montserrat, sans-serif;
+	font-size: .6875rem;
+	font-weight: 500;
+	letter-spacing: 3px;
+	list-style: none;
+	margin-right: 50px;
+	text-transform: uppercase;
+}
+
+/*-----------------------------------------------------
+3. Footer
+------------------------------------------------------*/
+
+footer {
+	padding-top: 100px;
+}
+
+.footer-details {
+	float: left;
+	width: 25%;
+}
+
+.footer-details li {
+	letter-spacing: .2px;
+	list-style: none;
+	margin-bottom: 5px;
+	text-transform: capitalize;
+}
+
+.footer-details li:first-child {
+	font-family: 'DM Serif Text', sans-serif;
+	font-size: 1.625rem;
+	margin-bottom: 9px;
+}
+
+.footer-details .footer-email {
+	text-transform: lowercase;
+}
+
+.footer-details:nth-of-type(4) li:first-child {
+	margin-bottom: 20px;
+}
+
+.footer-details form input {
+	border: none;
+	float: left;
+	font-family: Montserrat, sans-serif;
+	height: 50px;
+	outline: none;
+	padding-left: 25px;
+	width: 80%;
+}
+
+.footer-details form input::placeholder {
+	font-family: Montserrat, sans-serif;
+}
+
+.footer-details form button {
+	border: none;
+	cursor: pointer;
+	float: left;
+	height: 50px;
+	transition: all .2s ease-in-out;
+	width: 20%;
+}
+
+.footer-details form button img {
+	width: 27%;
+}
+
+.copyright {
+	font-size: 1.125rem;
+	padding: 130px 0 43px 0;
+	text-transform: capitalize;
+}
+
+/*-----------------------------------------------------
+4. Pages
+------------------------------------------------------*/
+
+/* =============== # About Us =============== */
+
+.about-page .info {
+	margin: 145px 0 140px 0;
+}
+
+.about-page .info h2 {
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	font-weight: 500;
+	letter-spacing: 2.5px;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+.about-page .info h1 {
+	font-family: 'DM Serif Text', serif;
+	font-size: 3rem;
+	font-weight: 400;
+	line-height: 1.2;
+	text-transform: capitalize;
+}
+
+.about-page .info header,
+.about-page .info .content {
+	float: left;
+	width: 48%;
+}
+
+.about-page .info .content {
+	margin-top: 50px;
+	margin-left: 4%;
+}
+
+.about-page .info p {
+	font-size: 1.1rem;
+	line-height: 1.7;
+}
+
+.about-page .info p:nth-of-type(1) {
+	margin-bottom: 18px;
+}
+
+.about-page-img {
+	height: 600px;
+	width: 100%;
+}
+
+/* =============== # Case Study =============== */
+
+.case-study .hero {
+	height: 700px;
+	width: 100%;
+}
+
+.case-study .hero .img-placeholder {
+	background: url('..//img/image-placeholder.jpg');
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: right;
+	height: 700px;
+	left: 0;
+	position: absolute;
+	top: 100px;
+	width: 63%;
+	z-index: -999;
+}
+
+.case-study .hero .content {
+	float: right;
+	padding-top: 200px;
+	width: 44%;
+}
+
+.case-study .hero .content h2 {
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	font-weight: 500;
+	letter-spacing: 2.5px;
+	margin-left: 12%;
+	padding-left: 100px;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.case-study .hero .content h2:before {
+	content: '';
+	height: 1px;
+	left: 0;
+	position: absolute;
+	top: 8px;
+	width: 70px;
+}
+
+.case-study .hero .content h1 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 5.5rem;
+	font-weight: 400;
+	line-height: .9;
+	margin: 33px 0 38px 0;
+	text-transform: capitalize;
+}
+
+.case-study .hero .content p {
+	font-size: 1.2rem;
+	line-height: 1.6;
+	margin-left: 30%;
+}
+
+.case-study .info {
+	float: left;
+	margin: 137px 0 140px 8.5%;
+	width: 50%;
+}
+
+.case-study .info p:first-child {
+	font-size: 1.3rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.case-study .info p {
+	font-size: 1.2rem;
+	line-height: 1.7;
+}
+
+.case-study .info-2 {
+	font-size: 1.375rem;
+	line-height: 1.7;
+	letter-spacing: .2px;
+	margin: 106px auto;
+	text-align: center;
+	width: 65%;
+}
+
+.case-study .details {
+	float: right;
+	margin-top: 150px;
+	padding: 32px 0 40px 0;
+	width: 26%;
+}
+
+.case-study .details li {
+	float: left;
+	font-family: 'DM Serif Text', serif;
+	font-size: 1.375rem;
+	font-weight: 400;
+	list-style: none;
+	padding: 0 0 0 45px;
+	text-transform: capitalize;
+	width: 50%;
+}
+
+.case-study .details li:nth-of-type(even) {
+	padding: 0 0 0 30px;
+}
+
+.case-study .details li:nth-of-type(1),
+.case-study .details li:nth-of-type(2) {
+	margin-bottom: 18px;
+}
+
+.case-study .details li span {
+	display: block;
+	font-family: Montserrat, sans-serif;
+	font-size: .6875rem;
+	letter-spacing: 1.5px;
+	margin-top: 6px;
+	margin-top: 3px;
+	text-transform: uppercase;
+}
+
+.case-study .details li:nth-of-type(2) span {
+	margin-top: 0.5px;
+}
+
+.case-study .details .small-letter {
+	display: inline-block;
+	text-transform: lowercase;
+}
+
+.case-study-image_1 {
+	height: 700px;
+	margin-bottom: 60px;
+	width: 100%;
+}
+
+.case-study-image_2,
+.case-study-image_3,
+.case-study-image_4,
+.case-study-image_5 {
+	float: left;
+	height: 700px;
+	width: 48%;
+}
+
+.case-study-image_2,
+.case-study-image_4 {
+	margin-right: 4%;
+}
+
+.next-project {
+	margin-top: 150px;
+}
+
+.next-project header {
+	align-items: center;
+	display: flex;
+	float: left;
+	height: 450px;
+	justify-content: center;
+	width: 33%;
+}
+
+.next-project header h2 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 4.2rem;
+	font-weight: 400;
+	line-height: 1.2;
+	text-transform: capitalize;
+}
+
+.next-project .thumbnail {
+	float: left;
+	height: 450px;
+	width: 67%;
+}
+
+
+/* =============== # Contact  =============== */
+
+.contact-image {
+	background: url('..//img/image-placeholder.jpg');
+	background-position: right;
+	-webkit-background-size: cover;
+	background-size: cover;
+	height: 767px;
+	float: right;
+	width: 55%;
+}
+
+.contact .container {
+	position: relative;
+}
+
+.contact-form-container {
+	height: 647px;
+	padding: 60px 100px 0 0;
+	position: absolute;
+	top: 120px;
+	width: 62%;
+}
+
+.contact-form-container h1 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 4.5rem;
+	font-weight: 400;
+	padding-bottom: 30px;
+	text-transform: capitalize;
+}
+
+.contact-form input,
+.contact-form textarea {
+	border: none;
+	outline: none;
+}
+
+.contact-form input {
+	margin-bottom: 30px;
+}
+
+.contact-form input::placeholder,
+.contact-form input,
+.contact-form textarea::placeholder {
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	letter-spacing: .3px;
+}
+
+.contact-form input[name=name],
+.contact-form input[name=email],
+.contact-form input[name=project-type], 
+.contact-form input[name=phone-number] {
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 20px;
+	width: 48%;
+}
+
+.contact-form input[name=name],
+.contact-form input[name=project-type] {
+	margin-right: 4%;
+}
+
+.contact-form textarea {
+	height: 200px;
+	padding: 25px;
+	width: 100%;
+}
+
+.contact-form textarea {
+	font-family: Montserrat, sans-serif;
+	font-size: .875rem;
+	line-height: 1.6;
+}
+
+.contact-form textarea::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.contact-form input[type=submit] {
+	cursor: pointer;
+	float: right;
+	letter-spacing: 2.5px;
+	margin-top: 23px;
+	transition: all .2s linear;
+}
+
+/* =============== # Homepage =============== */
+
+/* =============== = About us =============== */
+
+.about-us {
+	margin: 150px 0;
+}
+
+.about-us .block-1 {
+	float: left;
+	width: 57%;
+}
+
+.about-us .block-2 {
+	float: left;
+	width: 43%;
+}
+
+.about-us .block-1 {
+	margin-top: 100px;
+}
+
+.about-us .block-2 .about-image {
+	height: 670px;
+}
+
+.about-us .content h3 {
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	font-weight: 600;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+}
+
+.about-us .content h2 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 3.8rem;
+	font-weight: 400;
+	line-height: 1.1;
+	margin: 28px 0 30px 0;
+	text-transform: capitalize;
+}
+
+.about-us .content p {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	margin-bottom: 42px;
+	width: 73%;
+}
+
+/* =============== = Contact Us =============== */
+
+.contact-us .block-1 {
+	align-items: center;
+	display: flex;
+	float: left;
+	height: 680px;
+	justify-content: center;
+	width: 50%;
+}
+
+.contact-us .block-1 .content {
+	width: 60%;
+}
+
+.contact-us .block-1 .content h2 {
+	font-family: 'DM Serif Text', serif;
+	font-size: 4rem;
+	font-weight: 400;
+	letter-spacing: .5px;
+	line-height: 1.1;
+}
+
+.contact-us .block-1 .content p {
+	font-size: 1.25rem;
+	line-height: 1.8;
+	letter-spacing: .5px;
+	margin: 32px 0 48px 0;
+}
+
+.contact-us .block-2 {
+	background: url('..//img/image-placeholder.jpg');
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	float: right;
+	height: 680px;
+	width: 50%;
+}
+
+/* =============== = Featured Works =============== */
+
+.featured-works {
+	margin: 150px 0;
+}
+
+.featured-works-item {
+	height: 470px;
+	margin-bottom: 60px;
+	position: relative;
+	width: 100%;
+}
+
+.featured-works-item .overlay {
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	transition: all .3s linear;
+}
+
+.featured-works-item .overlay:hover {
+	opacity: 1;
+}
+
+.featured-works-item .overlay .content {
+	bottom: 30px;
+	left: 30px;
+	position: absolute;
+}
+
+.featured-works-item .overlay .content h2 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 1.7rem;
+	font-weight: 400;
+	letter-spacing: .3px;
+	margin-top: 8px;
+	text-transform: capitalize;
+}
+
+.featured-works-item .overlay .content span {
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	letter-spacing: 1.5px;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.featured-works-item .overlay .content span:nth-of-type(2) {
+	margin-left: 100px;
+}
+
+.featured-works-item .overlay .content span:nth-of-type(2):after {
+	content: '';
+	height: 1px;
+	left: -70px;
+	position: absolute;
+	top: 7px;
+	width: 40px;
+}
+
+/* =============== = Hero =============== */
+
+.main-hero {
+	height: 820px;
+}
+
+.main-hero header {
+	position: absolute;
+}
+
+.main-hero .block-1 {
+	align-items: center;
+	display: flex;
+	float: left;
+	height: 820px;
+	width: 55%;	
+}
+
+.main-hero .block-1 h1 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 4rem;
+	font-weight: 400;
+	line-height: 1.2;
+	text-transform: capitalize;
+}
+
+.main-hero .block-1 p {
+	font-size: 1.25rem;
+	letter-spacing: .2px;
+	line-height: 1.8;
+	margin: 35px 0 48px 0;
+	width: 76%;
+}
+
+.main-hero-image {
+	background: url('..//img/image-placeholder.jpg');
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+	float: right;
+	height: 100%;
+	width: 45%;
+}
+
+/* =============== = Services =============== */
+
+.services .item {
+	align-items: center;
+	border-right: 1px solid #333;
+	display: flex;
+	float: left;
+	height: 450px;
+	width: 25%;
+}
+
+.services .item:nth-of-type(4) {
+	border-right: none;
+}
+
+.services .item .content {
+	text-align: center;
+	width: 100%;
+}
+
+.services .item .icon {
+	border: 1px solid #666;
+	border-radius: 50%;
+	display: flex;
+	height: 135px;
+	justify-content: center;
+	margin: auto;
+	width: 135px;
+}
+
+.services .item .icon img {
+	height: 50px;
+	margin-top: 42.5px;
+}
+
+.services .item .content h2 {
+	font-size: .75rem;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 2.5px;
+	margin-top: 35px;
+	text-transform: uppercase;
+}
+
+/* =============== # Journal =============== */
+
+.journal header {
+	position: relative;
+	z-index: 2;
+}
+
+.journal footer {
+	position: relative;
+}
+
+.entries-list {
+	width: 50%;
+}
+
+.entry {
+	border-bottom: 1px solid #333;
+	padding-bottom: 125px;
+	padding-top: 125px;
+}
+
+.entry:nth-of-type(1) {
+	border-top: 1px solid #333;
+}
+
+.entry-thumbs  {
+	height: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 50%;
+}
+
+.entry-thumbs > div {
+	transition: opacity .6s;
+}
+
+.entry-thumb {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.active {
+	opacity: 1;
+}
+
+.journal .entry-title {
+	font-family: 'DM Serif Display', serif;
+	font-size: 3.4rem;
+	font-weight: 400;
+	line-height: 1.2;
+	margin-right: 35px;
+	text-transform: capitalize;
+}
+
+.entry-category {
+	display: inline-block;
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	font-weight: 500;
+	letter-spacing: 3px;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+}
+
+/* =============== # Projects =============== */
+
+
+.projects-page main {
+	padding-bottom: 80px;
+}
+
+.projects .item {
+	float: left;
+	margin-right: 3%;
+	width: 22.75%;
+}
+
+.projects .item img {
+	height: 370px;
+}
+
+.projects a:nth-of-type(4) .item {
+	margin-right: 0;
+}
+
+.projects .item h2 {
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	font-weight: 500;
+	letter-spacing: 2.5px;
+	margin-top: 30px;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.projects .item span {
+	padding-right: 45px;
+}
+
+.projects .item span:after {
+	content: "";
+	display: inline-block;
+	height: 1px;
+	left: 34px;
+	top: 8px;
+	position: absolute;
+	width: 15px;
+}
+
+
+/* =============== # Project Category =============== */
+
+.project-category {
+	margin-bottom: 137px;
+}
+
+.project-category .item {
+	float: left;
+}
+
+.project-category a:nth-of-type(odd) .item {
+	margin: 0 11% 88px 0;
+}
+
+.project-category a:nth-of-type(1) .item, 
+.project-category a:nth-of-type(5) .item, 
+.project-category a:nth-of-type(8) .item {
+	width: 40%;
+}
+
+.project-category a:nth-of-type(2) .item,
+.project-category a:nth-of-type(3) .item,
+.project-category a:nth-of-type(6) .item,
+.project-category a:nth-of-type(7) .item {
+	width: 49%;
+}
+
+.project-category a:nth-of-type(4) .item {
+	margin-top: -280px;
+	width: 32%;
+}
+
+.project-category a:nth-of-type(7) .item {
+	margin-bottom: 0;
+}
+
+.project-category a:nth-of-type(8) .item {
+	margin-top: -280px;
+}
+
+.project-category a:nth-of-type(1) .item-img,
+.project-category a:nth-of-type(5) .item-img,
+.project-category a:nth-of-type(8) .item-img {
+	height: 770px;
+}
+
+.project-category a:nth-of-type(2) .item-img,
+.project-category a:nth-of-type(6) .item-img,
+.project-category a:nth-of-type(7) .item-img {
+	height: 490px;
+}
+
+.project-category a:nth-of-type(3) .item-img {
+	height: 390px;
+}
+
+.project-category a:nth-of-type(4) .item-img {
+	height: 670px;
+}
+
+.project-category .item h2 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 1.875rem;
+	font-weight: 400;
+	margin-top: 22px;
+	text-transform: capitalize;
+}
+
+
+/* =============== # Single Journal Entry =============== */
+
+.single-journal-entry .entry-thumbnail .container {
+	position: relative;
+}
+
+.single-journal-entry .entry-category {
+	font-weight: 600;
+	letter-spacing: 2.5px;
+	margin: 45px 0 14px 0;
+}
+
+.single-journal-entry .entry-title {
+	font-family: 'DM Serif Display', serif;
+	font-size: 3rem;
+	font-weight: 400;
+	line-height: 1.2;
+	text-transform: capitalize;
+}
+
+.entry-meta {
+	margin-top: 15px;
+}
+
+.entry-author {
+	display: block;
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin-bottom: 3px;
+	text-transform: capitalize;
+}
+
+.entry-author span {
+	text-transform: lowercase;
+}
+
+.entry-date {
+	display: block;
+	font-size: .87rem;
+	letter-spacing: .4px;
+}
+
+.entry-content {
+	margin-top: 60px;
+}
+
+.entry-content p {
+	font-size: 1.2rem;
+	line-height: 1.6;
+	margin-bottom: 22px;
+	width: 55%;
+}
+
+.entry-content .intro {
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+.entry-image_1 {
+	margin: 70px 0 67px 0;
+	position: relative;
+	width: 100%;
+}
+
+.entry-image_1 img {
+	width: 66%;
+}
+
+.entry-image_1 figcaption {
+	font-size: .8rem;
+	left: 69%;
+	letter-spacing: .2px;
+	line-height: 1.7;
+	padding-top: 30px;
+	position: absolute;
+	top: 0;
+}
+
+.quote {
+	margin: 70px 0;
+	padding: 94px 0 74px 0;
+	width: 100%;
+}
+
+.quote p {
+	font-family: 'DM Serif Display', serif;
+	font-size: 2rem;
+	line-height: 1.4;
+	width: 100%;
+}
+
+.entry-image_2 {
+	float: left;
+	margin: 50px 0 67px 0;
+	width: 50%;
+}
+
+.entry-image_3 {
+	float: right;
+	margin-top: 50px;
+	width: 37%;
+}
+
+.entry-image_3 figcaption {
+	font-size: .8rem;
+	letter-spacing: .2px;
+	line-height: 1.7;
+	margin-top: 20px;
+}
+
+.similar-posts {
+	margin-top: 140px;
+}
+
+.similar-posts header,
+.similar-posts .item {
+	float: left;
+	height: 450px;
+	width: 33.33333%;
+}
+
+.similar-posts header {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.similar-posts header h2 {
+	font-family: 'DM Serif Display', serif;
+	font-size: 4.2rem;
+	font-weight: 400;
+	line-height: 1.2;
+	text-transform: capitalize;
+}
+
+.similar-posts .item {
+	position: relative;
+	cursor: pointer;
+}
+
+.similar-posts .item .overlay {
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	transition: all .3s linear;
+	width: 100%;
+}
+
+.similar-posts .item:hover .overlay {
+	opacity: 1;
+}
+
+.similar-posts .item .overlay .content {
+	bottom: 50px;
+	padding: 0 35px;
+	position: absolute;
+	width: 100%;
+}
+
+.similar-posts .item .overlay .category {
+	font-family: Montserrat, sans-serif;
+	font-size: .75rem;
+	font-weight: 500;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+}
+
+.similar-posts .item .overlay .title {
+	font-family: 'DM Serif Display', serif;
+	font-size: 2rem;
+	font-weight: 400;
+	letter-spacing: .7px;
+	line-height: 1.3;
+	margin-top: 7px;
+	text-transform: capitalize;
+}

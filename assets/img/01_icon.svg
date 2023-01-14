@@ -1,0 +1,14 @@
+<svg id="Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 136.99 84">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #bbb;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>01_icon</title>
+  <polygon class="cls-1" points="48.5 1 96.13 83.5 0.87 83.5 48.5 1"/>
+  <polygon class="cls-1" points="88.5 1 136.13 83.5 40.87 83.5 88.5 1"/>
+</svg>

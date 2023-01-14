@@ -1,0 +1,139 @@
+/*-----------------------------------------------------
+Table of Contents
+
+- # color #222
+- # background #222
+- # color #444
+- # color #555
+- # color #666
+- # color #fff
+- # background #fff
+- # background #f8f8f8
+
+------------------------------------------------------*/
+
+/*-----------------------------------------------------
+# color #222
+------------------------------------------------------*/
+
+.navigation a,
+.footer-details li:first-child,
+.entry-author,
+.project-category .item h2,
+.featured-works-item .overlay .content,
+.btn-inverse,
+.projects a,
+.entry-category,
+.quote,
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+	color: #222;
+}
+
+
+/*-----------------------------------------------------
+# background #222
+------------------------------------------------------*/
+
+.open-nav i,
+.open-nav i:before,
+.open-nav i:after,
+.case-study .hero .content h2:before,
+.featured-works-item .overlay .content span:nth-of-type(2):after,
+.responsive-nav-container,
+.footer-details form button:hover,
+.similar-posts,
+.journal,
+.next-project header,
+.btn:hover,
+.main-hero,
+.contact-us .block-1,
+.btn,
+.footer-details form button,
+.contact-form textarea::-webkit-scrollbar-thumb,
+.services .item,
+.projects .item span:after { 
+	background: #222;
+}
+
+.similar-posts .item .overlay {
+	background: rgba(0, 0, 0, .7);
+}
+
+/*-----------------------------------------------------
+# color #444
+------------------------------------------------------*/
+
+.about-us .content h3 {
+	color: #444;
+}
+
+/*-----------------------------------------------------
+# color #555
+------------------------------------------------------*/
+
+.copyright,
+.footer-details li,
+.footer-details li a {
+	color: #555;
+}
+
+/*-----------------------------------------------------
+# color #666
+------------------------------------------------------*/
+
+.entry-date,
+.entry-image_1 figcaption {
+	color: #666;
+}
+
+/*-----------------------------------------------------
+# color #fff
+------------------------------------------------------*/
+
+.responsive-nav-container a,
+.footer-details .ti-email,
+.similar-posts header,
+.similar-posts .item .overlay a,
+.services .item .content h2,
+.entry-title a,
+.navigation-inverse a,
+.next-project header,
+.btn,
+.main-hero .block-1,
+.contact-us .block-1 .content,
+.entries-list .entry-category {
+	color: #fff;
+}
+
+/*-----------------------------------------------------
+# background #fff
+------------------------------------------------------*/
+
+footer,
+.entry-header,
+.open-nav-inverse i,
+.open-nav-inverse i:before,
+.open-nav-inverse i:after,
+.contact-form-container,
+.main-hero .btn:hover,
+.contact-us .btn:hover,
+.btn-inverse {
+	background: #fff;
+}
+.featured-works-item .overlay {
+	background: rgba(255, 255,255, .8);
+}
+
+/*-----------------------------------------------------
+# background #f8f8f8
+------------------------------------------------------*/
+
+form input,
+form textarea,
+.case-study .details,
+.quote {
+	background: #f8f8f8;
+}
+
+
